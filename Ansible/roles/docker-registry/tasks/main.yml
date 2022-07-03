@@ -1,0 +1,13 @@
+---
+# tasks file for docker-registry
+- name: log into docker hub registry 
+ docker_login:
+   email: " dhiaelhak.baghdadi@esprit.tn"
+   username: "elhak47"
+   password:  "Elhak0194769."
+- name: Tag and push to docker hub
+ docker_image:
+   name: devops:latest 
+   repository: elhak47/angular-lc
+   push: yes
+   source: local
