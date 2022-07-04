@@ -12,14 +12,14 @@ pipeline
 		stage('Build') {
 				steps{
 					script{
-						sh "ansible-playbook home/tchapa/Bureau/appdhia/angularapp/Ansible/build.yml -i home/tchapa/Bureau/appdhia/angularapp/Ansible/inventory/host.yml "
+						sh "ansible-playbook Ansible/build.yml -i Ansible/inventory/host.yml "
 						}
 					}
 				}
 		stage('docker') {
 				steps {
 					script{ sh "ansible-galaxy collection install community.docker"
-						sh "ansible-playbook home/tchapa/Bureau/appdhia/angularapp/Ansible/docker.yml -i home/tchapa/Bureau/appdhia/angularapp/Ansible/inventory/host.yml"
+						sh "ansible-playbook Ansible/docker.yml -i Ansible/inventory/host.yml"
 						}
 					}
 
